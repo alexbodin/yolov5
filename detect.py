@@ -206,4 +206,4 @@ if __name__ == '__main__':
                 detect(opt)
                 strip_optimizer(opt.weights)
         else:
-            detect(opt)
+            detect(opt, save_img=True)
