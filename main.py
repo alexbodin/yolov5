@@ -1,8 +1,8 @@
 from detect import *
 
-source_img = '../inference_pics/GOPR0212_16050881947191.JPG'
-source_img2 = '../inference_pics/IMG_20210303_104504.jpg'
-weights = '../best.pt'
+source_img = 'inference_pics/GOPR0212_16050881947191.JPG'
+source_img2 = 'inference_pics/IMG_20210303_104504.jpg'
+weights = 'best.pt'
 
 # conf is the confidence threshold of the detection
 # iou_threshold is the area of overlap
