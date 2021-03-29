@@ -52,7 +52,7 @@ def detect(opt, save_img=False):
     for name, param in model.named_parameters():
 
         # for layer in model.model:
-        if 'conv.weight' in name:
+        if 'conv.weight' in name:  # conv.weight
             weights = param
             print(name)  # , filters.shape)
             # print(weights)
@@ -66,7 +66,7 @@ def detect(opt, save_img=False):
             # plotting all the filters
             for i in range(filters.shape[2]):
                 # get the filters
-                #filt = filters[:, :, :, i]
+                #filt = filters[i, :, :, :]
                 # plotting each of the channel, color image RGB channels
                 for j in range(filters.shape[3]):
                     ax = plt.subplot(
@@ -74,9 +74,9 @@ def detect(opt, save_img=False):
                     ax.set_xticks([])
                     ax.set_yticks([])
                     ax.axis('off')
-                    plt.imshow(filters[:, :, i, j])
+                    plt.imshow(filters[:, :, i, j], cmap='gray')
                     filter_cnt += 1
-                    #print(filt[:, :, :])
+                    #print(filters[j, :, :])
                     # return
 
             # plt.show()
